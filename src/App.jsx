@@ -1,7 +1,7 @@
 import TopHeader from './components/Header/TopHeader'
 import MidHeader from './components/Header/MidHeader'
 import DownHeader from './components/Header/DownHeader'
-
+import Hero from "./components/Hero/Hero"
 
 import Typography from "@mui/material/Typography";
 import { CssBaseline, ThemeProvider } from "@mui/material";
@@ -21,10 +21,11 @@ function App() {
     <TopHeader/>
     <MidHeader/>
     <DownHeader/>
+    <Hero/>
 
 
     <div className="App">
-          <Typography variant="h3">Header</Typography>
+          <Typography variant="h3"></Typography>
           <Outlet />
         </div>
     </>
