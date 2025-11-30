@@ -1,0 +1,29 @@
+.TopHeader-container{
+    display:flex;
+    padding :5px 30px;
+    background-color:#203445;
+
+}
+.TopHeader-title{
+    gap : 12px ;
+     align-items : center;
+}
+.TopHeader-hot{
+    padding : 5px 8px ;
+    background-color:#d50000 ;
+     border-radius : 12px ;
+      font-size : 12px ;
+      width: 54px ;
+       text-align :center 
+}
+.TopHeader-text{
+    font-size:12px ;
+     color : #fff
+}
+.TopHeader-list{
+    curser : pointer ;
+     border-radius :60px  ;
+      padding : 0 ;
+}
+
+

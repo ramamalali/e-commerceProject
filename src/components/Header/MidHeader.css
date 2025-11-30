@@ -1,0 +1,20 @@
+.MidHeader-container{
+    margin-top:1rem;
+    padding :5px 30px ;
+     display:flex ;
+      align-items :center ;
+       justify-content :space-between;
+}
+.MidHeader-logo{
+    align-items:center ;
+     padding:2px;
+}
+.MidHeader-search{
+    border-radius:20px;
+    display : flex;
+    justify-content :space-between
+}
+.MidHeader-icons{
+    display:flex ;
+     gap: 16px;
+}
