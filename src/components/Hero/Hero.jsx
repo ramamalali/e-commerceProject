@@ -51,7 +51,7 @@ export default function Hero() {
      [theme.breakpoints.down('sm')]: {  pt:4, pb:6 ,alignItems:"center",bgcolor:"#fff",color: "#283445" 
   },
 }}>
-  <Typography variant="caption" sx={{ fontSize: "30px" }}>
+  <Typography variant="caption" sx={{ fontSize: "27px" }}>
         LIFESTYLE COLLECTION
       </Typography>
       <Typography
@@ -100,7 +100,7 @@ export default function Hero() {
 })}
         </Swiper>
         <Box sx={{ display: { xs: "none", md: "block" }, minWidth: "26.6%" }}>
-          <Box sx={{ position: "relative" }}>
+          <Box sx={{ position: "relative" , display:"flex" }}>
             <img src="src/assets/images/banner-17.jpg" alt="" width={"100%"} />
             <Stack className="hero-photo-text">
               <Typography variant="caption" sx={{ fontSize: "18px" }}>
@@ -125,7 +125,7 @@ export default function Hero() {
               </Link>
             </Stack>
           </Box>
-          <Box sx={{ position: "relative" }}>
+          <Box sx={{ position: "relative" , display:"flex" , marginTop:"10px"}}>
             <img src="src/assets/images/banner-16.jpg" alt="" width={"100%"} />
             <Stack className="hero-photo-text">
               <Typography variant="caption" sx={{ fontSize: "18px" }}>

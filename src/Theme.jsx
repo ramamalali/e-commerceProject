@@ -18,6 +18,9 @@ export const getDesignTokens = (mode) => ({
           myColor: {
             main: "#F6F9FC",
           },
+          bgcolor: {
+            main: "#f6f6f6",
+          },
 
           favColor: {
             main: grey[300],
@@ -31,7 +34,9 @@ export const getDesignTokens = (mode) => ({
           myColor: {
             main: "#252b32",
           },
-
+          bgcolor: {
+            main: "#1D2021",
+          },
           favColor: {
             main: grey[800],
           },

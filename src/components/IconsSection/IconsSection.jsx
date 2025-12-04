@@ -6,6 +6,8 @@ import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
 import CreditScoreIcon from '@mui/icons-material/CreditScore';
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
 
 const data=[
     {icon:<ElectricBoltIcon sx={{fontSize:"40px"}}/> , title:"Fast Delivery" , desc:"Start from 10$"},
@@ -14,6 +16,7 @@ const data=[
     {icon:<CreditScoreIcon sx={{fontSize:"40px"}}/> , title:"Payment" , desc:"secure system"},
 ]
 export default function IconsSection(){
+    const theme = useTheme();
     return(
         <>
        <Container  maxWidth={false} sx={{mt:2}}>
@@ -21,7 +24,8 @@ export default function IconsSection(){
         {data.map((item) =>{
             return(
          
-            <Box sx={{display:"flex" , alignItems:"center",justifyContent:"center" , gap:2 , width:"19rem" , height:"6rem", bgcolor:"#000" , flexGrow:1}}>
+            <Box key={item.title} sx={{display:"flex" , alignItems:"center",justifyContent:useMediaQuery("(min-width:600px)") ? "center" :"start" , gap:2 , width:"19rem" , height:"6rem",  bgcolor: theme.palette.mode === "dark" ? "#000" : "#fff",
+            color: theme.palette.text.primary,  flexGrow:1 , paddingLeft: useMediaQuery("(min-width:600px)") ? "0" :"30px"}}>
               {item.icon}
              <Stack> <Typography>{item.title}</Typography>  
               <Typography>{item.desc}</Typography>  </Stack>

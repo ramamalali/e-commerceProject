@@ -1,8 +1,10 @@
 import TopHeader from './components/Header/TopHeader'
 import MidHeader from './components/Header/MidHeader'
 import DownHeader from './components/Header/DownHeader'
-import Hero from "./components/Hero/Hero"
-import IconsSection from "./components/IconsSection/IconsSection"
+import Main from './components/MainContent/Main'
+import Footer from './components/Footer/Footer'
+import ScrolltoTop from './components/Scroll/ScrolltoTop'
+
 
 import Typography from "@mui/material/Typography";
 import { CssBaseline, ThemeProvider } from "@mui/material";
@@ -22,9 +24,9 @@ function App() {
     <TopHeader/>
     <MidHeader/>
     <DownHeader/>
-    <Hero/>
-    <IconsSection/>
-
+    <Main/>
+    <ScrolltoTop/>
+    <Footer/>
 
     <div className="App">
           <Typography variant="h3"></Typography>

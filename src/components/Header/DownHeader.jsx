@@ -162,9 +162,8 @@ export default function DownHeader() {
           onClose={toggleDrawer("right", false)}
           sx={{ ".MuiPaper-root": { width: "100%" } }}
         >
-          <Box sx={{ width: "444px", margin: "auto", marginTop: "46px" }}>
-            <Button onClick={toggleDrawer("right", false)}>
-              {" "}
+          <Box sx={{ width: "444px", margin: "auto", marginTop: "90px" , position:"relative" }}>
+            <Button onClick={toggleDrawer("right", false)} sx={{position:"absolute" , left:"86%" , bottom:"101%"}}>
               <CloseIcon
                 sx={{
                   color: theme.palette.text.primary,
