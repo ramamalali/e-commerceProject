@@ -9,7 +9,7 @@ import ScrolltoTop from './components/Scroll/ScrolltoTop'
 import Typography from "@mui/material/Typography";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./Theme";
-import { Outlet } from "react-router-dom";
+import { motion } from "motion/react"
 
 
 import './App.css'
@@ -18,7 +18,7 @@ function App() {
   const [theme, colorMode] = useMode();
   return (
     <ColorModeContext.Provider value={colorMode}>
-            <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
     <>
     <CssBaseline />
     <TopHeader/>
@@ -27,11 +27,6 @@ function App() {
     <Main/>
     <ScrolltoTop/>
     <Footer/>
-
-    <div className="App">
-          <Typography variant="h3"></Typography>
-          <Outlet />
-        </div>
     </>
     </ThemeProvider>
     </ColorModeContext.Provider>

@@ -98,7 +98,7 @@ return (
     <Container maxWidth={false} className="MidHeader-container">
     <Stack className="MidHeader-logo">
       <ShoppingCartOutlinedIcon />
-      <Typography>E-commerce</Typography>
+      <Typography className="MidHeader-name">E-commerce</Typography>
     </Stack>
     <Stack sx={{width:"60%"}}>
     <Search className="MidHeader-search" sx={{ borderRadius:"24px"}}>

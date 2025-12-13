@@ -5,6 +5,7 @@ import "./Main.css";
 import { useTheme } from "@mui/material/styles";
 import { useState } from "react";
 import { useGetProductsQuery } from "../../services/Product";
+import { motion } from "motion/react"
 
 /* mui */
 import Container from "@mui/material/Container";
@@ -22,9 +23,11 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import Rating from "@mui/material/Rating";
 import Dialog from "@mui/material/Dialog";
 import CloseIcon from "@mui/icons-material/Close";
+import CircularProgress from '@mui/material/CircularProgress';
 
 export default function Main() {
   const [open, setOpen] = useState(false);
+  const [itemClicked, setItemClicked] = useState({});
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -44,18 +47,32 @@ export default function Main() {
   const [alignment, setAlignment] = useState(allProductsAPI);
 
   const handleAlignment = (event, newValue) => {
+    if(newValue !== null){
     setAlignment(newValue);
     setMyData(newValue);
+    }
+
   };
   const { data, error, isLoading } = useGetProductsQuery(myData);
 
   if (isLoading) {
-    return <Typography variant="h6">Loading</Typography>;
+    return (
+      <Container maxWidth={false} sx={{p:11 , textAlign :"center"}}>
+      <Box>
+      <CircularProgress />
+    </Box>
+    </Container>
+    );
   }
   if (error) {
-    return <Typography variant="h6">error.message</Typography>;
+    return (
+      <Container maxWidth={false} sx={{p:11 , textAlign :"center"}}>
+        <Typography variant="h6">{error.error}</Typography>
+        <Typography variant="h6">please try again later</Typography>
+      </Container>
+    );
   }
-  if (data) {
+ 
     return (
       <>
         <Container
@@ -67,19 +84,12 @@ export default function Main() {
 
           <Stack
             direction={"row"}
-            sx={{
-              mt: 7,
-              paddingInline: "21px",
-              alignItems: "center",
-              justifyContent: "space-between",
-              flexWrap: "wrap",
-              gap: 1,
-            }}
+            className="main-header-icons"
           >
             <Box>
               <Typography variant="h5">Selected Products</Typography>
               <Typography
-                // @ts-ignore
+              className="main-product-description"
                 variant="content"
               >
                 All our new arrival in a exclusive brand selection
@@ -121,24 +131,30 @@ export default function Main() {
           </Stack>
 
           <Stack
-            sx={{ mt: 4, paddingInline: "21px" }}
+          className="main-card-container"
+            sx={{ mt: 4  }}
             direction={"row"}
             flexWrap={"wrap"}
-            justifyContent={"space-between"}
           >
             {data.data.map((item) => {
                 return (
                   <Card
                     key={item.id}
+                   component={motion.div}
+                   layout
+                   initial={{transform : "scale(0)"}}
+                   animate={{transform : "scale(1)"}}
+                   transition={{duration : 0.6}}
                     sx={{
-                      maxWidth: 333,
+                    width:"370px !important",
+                    paddingBottom:"15px",
                       ":hover .MuiCardMedia-root": { scale: "1.1" },
                       transition: "0.2s",
                       mb: 6,
                     }}
                   >
                     <CardMedia
-                      sx={{ height: 277 }}
+                      sx={{ height: 277 , width:"100%" }}
                       image={`${item.productImg[0].url}`}
                       title="product"
                     />
@@ -152,7 +168,7 @@ export default function Main() {
                           {item.productTitle}
                         </Typography>
                         <Typography gutterBottom variant="h5" component="div">
-                          {item.productPrice}
+                          {item.productPrice}$
                         </Typography>
                       </Stack>
 
@@ -165,7 +181,10 @@ export default function Main() {
                     </CardContent>
                     <CardActions sx={{ justifyContent: "space-between" }}>
                       <Button
-                        onClick={handleClickOpen}
+                        onClick={() =>{
+                          handleClickOpen()
+                          setItemClicked(item)
+                        }}
                         sx={{ textTransform: "capitalize" }}
                         size="large"
                       >
@@ -213,10 +232,10 @@ export default function Main() {
                 }}
               />
             </Button>
-            <ProductDetails />
+            <ProductDetails itemClicked={itemClicked} />
           </Dialog>
         </Container>
       </>
     );
   }
-}
+

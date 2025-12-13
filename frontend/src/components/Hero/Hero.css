@@ -15,6 +15,11 @@
 
 .photo-desc {
   line-height: 16px;
+  font-size:16px !important;
+}
+.hero-saleup{
+  font-size: 30px !important;
+  margin-right: 5px !important;
 }
 .photo-link {
   display: flex;
@@ -62,5 +67,18 @@
 @media (max-width : 600px){
   .parent-slider img {
     display: none;
+  }
+}
+@media (max-width : 460px){
+ 
+  .hero-saleup{
+    font-size: 20px !important;
+  }
+  .photo-desc {
+    font-size:12px !important;
+    margin-top:5px !important;
+  }
+  .hero-btn{
+    margin-top:15px !important;
   }
 }

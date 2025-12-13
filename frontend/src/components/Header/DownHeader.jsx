@@ -162,7 +162,7 @@ export default function DownHeader() {
           onClose={toggleDrawer("right", false)}
           sx={{ ".MuiPaper-root": { width: "100%" } }}
         >
-          <Box sx={{ width: "444px", margin: "auto", marginTop: "90px" , position:"relative" }}>
+          <Box sx={{ width: "70% !important", margin: "auto", marginTop: "90px" , position:"relative" }}>
             <Button onClick={toggleDrawer("right", false)} sx={{position:"absolute" , left:"86%" , bottom:"101%"}}>
               <CloseIcon
                 sx={{
@@ -185,7 +185,7 @@ export default function DownHeader() {
                     <List>
                       {item.subLink.map((item) => {
                         return (
-                          <ListItem disablePadding>
+                          <ListItem key={item} disablePadding>
                             <ListItemButton>
                               <ListItemText primary={item} />
                             </ListItemButton>

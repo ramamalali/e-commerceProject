@@ -51,32 +51,25 @@ export default function TopHeader() {
 
 
     return (
-    <>
-  
+  <>
 <Box  >
 <Container className="TopHeader-container" maxWidth={false} >
-<Stack direction={"row"} className="TopHeader-title">
-<Typography className="TopHeader-hot" variant="body2">Hot</Typography>
-<Typography className="TopHeader-text" variant="body2">Free Express Shipping</Typography>
-  
-</Stack>
+ <Stack direction={"row"} className="TopHeader-title">
+  <Typography className="TopHeader-hot" variant="body2">Hot</Typography>
+  <Typography className="TopHeader-text" variant="body2">Free Express Shipping</Typography>
+ </Stack>
 
-<Box flexGrow={1}   ></Box> 
-
+<Box flexGrow={1}></Box> 
 <Stack direction={"row"}className="TopHeader-title" >
-     {theme.palette.mode === "light" ? (
-      <IconButton sx={{color:"white"}}
-        onClick={() => {
-          localStorage.setItem(
-            "mode",
-            theme.palette.mode === "dark" ? "light" : "dark"
-          );
-          colorMode.toggleColorMode();
-        }}
-        color="inherit"
-      >
-        <LightModeOutlinedIcon  sx={{fontSize : "19px"}} />
-      </IconButton>
+ {theme.palette.mode === "light" ? (
+ <IconButton sx={{color:"white"}}
+ onClick={() => {
+ localStorage.setItem( "mode", theme.palette.mode === "dark" ? "light" : "dark" );
+ colorMode.toggleColorMode();
+   }}
+ color="inherit" >
+ <LightModeOutlinedIcon  sx={{fontSize : "19px"}} />
+ </IconButton>
     ) : (
       <IconButton
       sx={{color:"white"}}

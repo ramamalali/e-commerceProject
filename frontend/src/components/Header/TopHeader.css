@@ -5,16 +5,16 @@
 
 }
 .TopHeader-title{
-    gap : 12px ;
-     align-items : center;
+ gap : 12px ;
+ align-items : center;
 }
 .TopHeader-hot{
-    padding : 5px 8px ;
-    background-color:#d50000 ;
-     border-radius : 12px ;
-      font-size : 12px ;
-      width: 54px ;
-       text-align :center 
+ padding : 5px 8px ;
+  background-color:#d50000 ;
+  border-radius : 12px ;
+ font-size : 12px ;
+ width: 54px ;
+ text-align :center; 
 }
 .TopHeader-text{
     font-size:12px ;
@@ -26,4 +26,10 @@
       padding : 0 ;
 }
 
+
+@media(max-width : 460px){
+    .TopHeader-text{
+     display:none;
+    }
+}
 

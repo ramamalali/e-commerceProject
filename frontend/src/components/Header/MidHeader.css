@@ -1,4 +1,5 @@
 .MidHeader-container{
+    width:100% !important;
     margin-top:1rem;
     padding :5px 30px ;
      display:flex ;
@@ -17,4 +18,14 @@
 .MidHeader-icons{
     display:flex ;
      gap: 16px;
+}
+
+
+@media(max-width : 460px){
+    .MidHeader-search{
+       display:none;
+    }  
+    .MidHeader-name{
+        font-size:12px !important;
+    }
 }
